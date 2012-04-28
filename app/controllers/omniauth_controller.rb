@@ -7,7 +7,7 @@ class OmniauthController < ApplicationController
     
     if user.update_attributes(:name => auth_hash["info"]["name"])
       session[:user_id] = user.id
-      redirect_to root_path, :notice => 'You are now logged in.'
+      redirect_to root_path, :notice => 'You are now logged in. Go and vote!'
     else
       redirect_to root_path, :error => 'Login failed.'
     end
