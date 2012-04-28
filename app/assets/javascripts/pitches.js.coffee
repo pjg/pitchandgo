@@ -4,7 +4,7 @@
 
 
 jQuery ->
-  $(".vote").click ->
+  $(".vote.btn-success").live 'click', (event) ->
     console.log("click")
     id = $(this).data("id")
     console.log(id)
@@ -15,7 +15,6 @@ jQuery ->
         console.log("success")
         console.log(data)
         $("#votes_left").text(data.votes_left)
-        $(this).unbind("click")
         $(this).removeClass("btn-success")
         $(this).addClass("btn-inverse")
         $(this).text("Voted")
