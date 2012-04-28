@@ -10,7 +10,7 @@ class PitchesController < ApplicationController
       current_user.votes.create(:pitch_id => params[:id])
       render :json => { :status => "success" }
     else
-      render :json => { :status => "failure" }
+      render :json => { :status => "failure" }, :status => 400
     end
   end
 
