@@ -14,8 +14,8 @@
       <tr>
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
         <td><%= pitch.description.first(100) %></td>
-        <td><h3>13</h3></td>
-        <td><%= link_to "Undo", "#", :class => 'btn btn-danger .btn-small' %></td>
+        <td><h3><%= pitch.votes.count %></h3></td>
+        <td><%= button_to "Undo", vote_pitch_path(pitch), :class => 'btn btn-danger .btn-small' %></td>
       </tr>
     <% end %>
   </tbody>
