@@ -24,8 +24,10 @@
           <% end -%>
         </td>
         <td>
-          <% if logged_in? -%>
+          <% if logged_in? && (current_user.has_votes_left? or current_user.has_voted_on_pitch?(pitch)) -%>
           <button class="btn <%= current_user.has_voted_on_pitch?(pitch) ? 'btn-inverse' : 'btn-success' %> .btn-small vote" data-id="<%= pitch.id %>">Vote<%= 'd' if current_user.has_voted_on_pitch?(pitch) %></button>
+          <% else -%>
+          <span>no more votes</span>
           <% end -%>
         </td>
       </tr>

@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     votes.any?
   end
 
+  def has_votes_left?
+    !has_finished_voting?
+  end
+
   def has_finished_voting?
     votes.count >= 3
   end

@@ -18,5 +18,7 @@ jQuery ->
         $(this).removeClass("btn-success")
         $(this).addClass("btn-inverse")
         $(this).text("Voted")
+        if data.votes_left == 0
+          $('.btn-success.vote').parent().text("no more votes")
       error: ->
-        alert("You don't have any more votes")
+        $('.btn-success.vote').parent().text("no more votes")
