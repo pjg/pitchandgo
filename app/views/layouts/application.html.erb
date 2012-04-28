@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PitchAndGo</title>
+  <title>Store</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Pitch&Go</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "" %></li>
+          <li><%= link_to "Pitches", root_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span9"><%= yield %></div>
+    <div class="span3">
+      <h2>ABOUT EVENT</h2>
+      <p>Startup Weekend is an intense 54 hour event which focuses on building a web or mobile application which could form the basis of a credible business over the course of a weekend. The weekend brings together people with different skillsets - primarily software developers, graphics designers and business people - to build applications and develop a commercial case around them.</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>

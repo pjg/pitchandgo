@@ -1,22 +1,24 @@
 <h1>Pitches</h1>
+<p>3 votes left</p>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @pitches.each do |pitch| %>
       <tr>
         <td><%= link_to pitch.name, pitch_path(pitch) %></td>
-        <td><%= pitch.description.first(140) %></td>
+        <td><%= pitch.description.first(100) %></td>
+        <td><%= link_to "Vote", "#", :class => 'btn btn-success .btn-small' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<% link_to "Login", "#", :class => "btn btn-success .btn-large" %>
-<% link_to "Login", "#", :class => "btn btn-primary .btn-large" %>
-<% link_to "Login", "#", :class => "btn btn-success .btn-large" %>
+<%= link_to "Login as Jakub", "#",  :class => "btn btn-primary .btn-large" %>
+<%= link_to "Login as Michał", "#", :class => "btn btn-primary .btn-large" %>
+<%= link_to "Login as Maciek", "#", :class => "btn btn-primary .btn-large" %>
