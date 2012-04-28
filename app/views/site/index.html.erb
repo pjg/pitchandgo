@@ -15,7 +15,7 @@
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
         <td><%= pitch.description.first(100) %></td>
         <td><h3><%= pitch.votes.count %></h3></td>
-        <td><button class="btn btn-success .btn-small vote" data-id="<%= pitch.id %>">Vote</button></td>
+        <td><button class="btn <%= current_user.has_voted_on_pitch?(pitch) ? 'btn-inverse' : 'btn-success' %> .btn-small vote" data-id="<%= pitch.id %>">Vote<%= 'd' if current_user.has_voted_on_pitch?(pitch) %></button></td>
       </tr>
     <% end %>
   </tbody>
