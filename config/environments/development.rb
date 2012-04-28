@@ -35,7 +35,6 @@ PitchAndGo::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  ENV['EVENTBRITE_CLIENT_ID']     = '2FWVRZUHWPHK2EOFER'
-  ENV['EVENTBRITE_CLIENT_SECRET'] = '3FT65A7D7G65GK7CUAMFTKPALBYT7GVO3YE2MDRPDNGD7DGGNJ'
-
+  ENV['GOOGLE_CLIENT_ID']     = '808093639639.apps.googleusercontent.com'
+  ENV['GOOGLE_CLIENT_SECRET'] = '4O7sXGuuRzN_1ih9rFis60Ma'
 end

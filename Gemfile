@@ -21,7 +21,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
 end
 
-gem 'omniauth-eventbrite'
+gem 'omniauth-google'
 gem 'jquery-rails'
 
 gem 'therubyracer'
