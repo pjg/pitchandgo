@@ -22,7 +22,7 @@
           <li><%= link_to "Pitches", root_path %></li>
         </ul>
         <% if logged_in? %>
-          <span class="login-info">Logged in as <strong><%= current_user.name %></strong></span>
+          <span class="login-info">Logged in as <strong><%= current_user.name %></strong>, <%= link_to "Logout?", "/logout" %></span>
         <% else %>
           <%= link_to "Login with your Google Account", "/auth/google", :class => "btn btn-primary .btn-large login-button" %>
         <% end %>
@@ -33,7 +33,11 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="span6"><%= yield %></div>
+    <div class="span6">
+      <% if flash[:notice] %><div class="alert alert-info"><%= flash[:notice] %></div><% end %>
+      <% if flash[:alert] %><div class="alert alert-error"><%= flash[:alert] %></div><% end %>
+      <%= yield %>
+    </div>
   </div>
 </div>
 </body>
