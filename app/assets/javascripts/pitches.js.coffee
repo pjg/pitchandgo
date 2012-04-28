@@ -11,7 +11,9 @@ jQuery ->
     $.ajax '/pitches/'+id+'/vote',
       type: 'POST'
       dataType: 'json'
-      success: ->
+      success: (data) ->
         console.log("success")
+        console.log(data)
+        $("#votes_left").text(data.votes_left)
       error: ->
         alert("You don't have any more votes")

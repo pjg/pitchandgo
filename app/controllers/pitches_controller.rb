@@ -8,7 +8,8 @@ class PitchesController < ApplicationController
   def vote
     if current_user.votes.count < 3
       current_user.votes.create(:pitch_id => params[:id])
-      render :json => { :status => "success" }
+      render :json => { :status => "success",
+                        :votes_left => 3-current_user.votes.count }
     else
       render :json => { :status => "failure" }, :status => 400
     end
