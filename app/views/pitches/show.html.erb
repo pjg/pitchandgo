@@ -1,0 +1,24 @@
+<h1><%= @pitch.name %></h1>
+<h3 style="margin-top: 20px">Who voted on this pitch?</h3>
+
+<% if @pitch.votes.any? -%>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pitch.votes.each do |vote| %>
+      <tr>
+        <td><h3><%= vote.user.name %></h3></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else -%>
+<p>No votes yet. Go and vote!</p>
+<% end -%>
+
+
+<p><%= link_to "Go back to pitches", root_path %>

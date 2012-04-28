@@ -14,4 +14,7 @@ class PitchesController < ApplicationController
     end
   end
 
+  def show
+    @pitch = Pitch.find(params[:id])
+  end
 end
