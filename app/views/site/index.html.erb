@@ -1,5 +1,9 @@
 <h1>Pitches</h1>
+<% if logged_in? -%>
 <p><span id="votes_left"><%= 3 - current_user.votes.count %></span> vote(s) left</p>
+<% else-%>
+<h3 style="margin: 10px 0">You have to be logged in to vote!</h3>
+<% end -%>
 <table class="table">
   <thead>
     <tr>
@@ -15,7 +19,11 @@
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
         <td><%= pitch.description.first(100) %></td>
         <td><h3><%= pitch.votes.count %></h3></td>
-        <td><button class="btn <%= current_user.has_voted_on_pitch?(pitch) ? 'btn-inverse' : 'btn-success' %> .btn-small vote" data-id="<%= pitch.id %>">Vote<%= 'd' if current_user.has_voted_on_pitch?(pitch) %></button></td>
+        <td>
+          <% if logged_in? -%>
+          <button class="btn <%= current_user.has_voted_on_pitch?(pitch) ? 'btn-inverse' : 'btn-success' %> .btn-small vote" data-id="<%= pitch.id %>">Vote<%= 'd' if current_user.has_voted_on_pitch?(pitch) %></button>
+          <% end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
