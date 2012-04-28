@@ -3,6 +3,7 @@ Pitch.create(:name => "FitsU", :description => "mobile application that finds cl
 Pitch.create(:name => "Foody", :description => "application for info-kiosks located in hipermarkets (Tesco, etc.) showing to customers only recipes filtered by their prices/cooking time/ingredients criteria.")
 Pitch.create(:name => "FitTheKit", :description => "easy way to create your kitchen plan in 3D.")
 Pitch.create(:name => "U.Promised", :description => "easily create a short-term reminder in only 5 second & with 3 clicks.")
-Pitch.create(:name => "4 Blood Type", :description => "mobile application that helps people eat healthy and accordingly with their blood type.")
+Pitch.create(:name => "TeleportMe.net ", :description => "mobile application  app that shows you way to your home and is maximally simple in usage")
 Pitch.create(:name => "Salelo", :description => "mobile application that helps you find and share infos about promotions and sales in your neighbourhood.")
 Pitch.create(:name => "Pitch & Go", :description => "magic solution to improve organizing Startup Weekends and similar events.")
+Pitch.create(:name => "Zabio.re", :description => "will help students and other young people in organizing travelling between cities in small group of friends .")
