@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     votes.any?
   end
 
+  def has_finished_voting?
+    votes.count >= 3
+  end
+
   def has_voted_on_pitch?(pitch)
     (pitch.votes.collect(&:id) & votes.collect(&:id)).any?
   end

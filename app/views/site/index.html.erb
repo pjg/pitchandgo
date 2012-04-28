@@ -15,10 +15,14 @@
   </thead>
   <tbody>
     <% @pitches.each do |pitch| %>
-      <tr>
+      <tr data-id="<%= pitch.id  %>">
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
         <td><%= pitch.description.first(100) %></td>
-        <td><h3><%= pitch.votes.count %></h3></td>
+        <td>
+          <%- if logged_in? && current_user.has_finished_voting? %>
+            <h3><%= pitch.votes.count %></h3>
+          <% end -%>
+        </td>
         <td>
           <% if logged_in? -%>
           <button class="btn <%= current_user.has_voted_on_pitch?(pitch) ? 'btn-inverse' : 'btn-success' %> .btn-small vote" data-id="<%= pitch.id %>">Vote<%= 'd' if current_user.has_voted_on_pitch?(pitch) %></button>
