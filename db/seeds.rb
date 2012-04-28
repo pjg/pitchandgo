@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
-User.create(:name => 'Bartosz Cytrowski')
-User.create(:name => 'Marek Klimowicz')
-User.create(:name => 'Dawid Dziadkiewicz')
-User.create(:name => 'Łukasz Domaradzki')
-User.create(:name => 'Paweł Gościcki')
-User.create(:name => 'Jakub Naliwajek')
+User.create(:name => 'Bartosz Cytrowski', :email => 'bartosz.cytrowski@gmail.com')
+User.create(:name => 'Marek Klimowicz', :email => 'marek.klimowicz@gmail.com')
+User.create(:name => 'Dawid Dziadkiewicz', :email => 'dawid.dziadkiewicz@gmail.com')
+User.create(:name => 'Łukasz Domaradzki', :email => 'lukasz.domaradzki@gmail.com')
+User.create(:name => 'Paweł Gościcki', :email => 'pawel.goscicki@gmail.com')
+User.create(:name => 'Jakub Naliwajek', :email => 'naliwajek@gmail.com')
 
 Pitch.create(:name => "E-warranty", :description => "mobile application scanning receipts and automatically creating product list with warranty information.")
 Pitch.create(:name => "FitsU", :description => "mobile application that finds clothes simply fitting you!")
