@@ -1,5 +1,5 @@
 <% if logged_in? -%>
-<h3><span id="votes_left"><%= 3 - current_user.votes.count %></span> vote(s) left</h3>
+<h3><span id="votes_left"><%= 3 - current_user.votes.count %></span> vote(s) left. Please vote!</h3>
 <% else-%>
 <h3 style="margin-bottom: 10px">You have to be logged in to vote!</h3>
 <% end -%>
