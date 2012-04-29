@@ -12,17 +12,17 @@
     <div class="span6">
       <p><%= link_to image_tag("logo.png", :width => '250px', :alt => 'Pitch&Go'), root_path %></p>
 
-      <p>
-      <% if logged_in? %>
-        <span>Logged in as <strong><%= current_user.name %></strong>, <%= link_to "Logout?", "/logout" %></span>
-      <% else %>
-        <%= link_to "Login with your Google Account", "/auth/google", :class => "btn btn-primary .btn-large login-button" %>
+      <% if !logged_in? %>
+      <p><%= link_to "Login with your Google Account", "/auth/google", :class => "btn btn-primary .btn-large login-button" %></p>
       <% end %>
-      </p>
 
       <% if flash[:notice] %><div class="alert alert-info"><%= flash[:notice] %></div><% end %>
       <% if flash[:alert] %><div class="alert alert-error"><%= flash[:alert] %></div><% end %>
       <%= yield %>
+
+      <% if logged_in? %>
+        <p><span>Logged in as <strong><%= current_user.name %></strong>, <%= link_to "Logout?", "/logout" %></span></p>
+      <% end -%>
     </div>
   </div>
 </div>
