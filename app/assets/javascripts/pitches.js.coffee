@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-
 jQuery ->
   $(".vote.btn-success").live 'click', (event) ->
     id = $(this).data("id")
@@ -16,5 +15,14 @@ jQuery ->
         $(this).text("Voted")
         if data.votes_left == 0
           $('.btn-success.vote').parent().text("no more votes")
+          refreshVotes()
       error: ->
         $('.btn-success.vote').parent().text("no more votes")
+
+  refreshVotes = ->
+    console.log('refresh')
+    $.getJSON '/pitches.json', (pitches) ->
+      $.each pitches, (index, pitch) ->
+        $('h3.votes-count[data-id=' + pitch.id + ']').text(pitch.votes_count)
+
+  setInterval(refreshVotes, 10000)

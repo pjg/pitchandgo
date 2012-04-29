@@ -2,7 +2,11 @@ class PitchesController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Pitch.order(:id)
+    if current_user.has_finished_voting?
+      respond_with Pitch.order(:id).as_json(:methods => :votes_count)
+    else
+      respond_with Pitch.order(:id)
+    end
   end
 
   def vote

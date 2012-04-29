@@ -19,9 +19,11 @@
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h2></td>
         <td><%= pitch.description %></td>
         <td>
-          <%- if logged_in? && current_user.has_finished_voting? %>
-            <h3 class="votes-count" data-id="<%= pitch.id %>"><%= pitch.votes.count %></h3>
-          <% end -%>
+          <h3 class="votes-count" data-id="<%= pitch.id %>">
+            <%- if logged_in? && current_user.has_finished_voting? %>
+              <%= pitch.votes.count %>
+            <% end -%>
+          </h3>
         </td>
         <td>
           <% if logged_in? && (current_user.has_votes_left? or current_user.has_voted_on_pitch?(pitch)) -%>
