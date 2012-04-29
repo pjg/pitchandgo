@@ -1,9 +1,9 @@
-<h1>Pitches</h1>
 <% if logged_in? -%>
-<p><span id="votes_left"><%= 3 - current_user.votes.count %></span> vote(s) left</p>
+<h3><span id="votes_left"><%= 3 - current_user.votes.count %></span> vote(s) left</h3>
 <% else-%>
-<h3 style="margin: 10px 0">You have to be logged in to vote!</h3>
+<h3 style="margin: 10px 0 10px 7px">You have to be logged in to vote!</h3>
 <% end -%>
+
 <table class="table">
   <thead>
     <tr>
@@ -17,7 +17,7 @@
     <% @pitches.each do |pitch| %>
       <tr data-id="<%= pitch.id  %>">
         <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
-        <td><%= pitch.description.first(100) %></td>
+        <td><%= pitch.description %></td>
         <td>
           <%- if logged_in? && current_user.has_finished_voting? %>
             <h3><%= pitch.votes.count %></h3>
