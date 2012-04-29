@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pitch&Go</title>
+  <title>Pitch&amp;Go</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="span6">
-      <p><%= link_to image_tag("logo.png", :width => '250px', :alt => 'Pitch&Go'), root_path %></p>
+      <p><%= link_to image_tag("logo.png", :id => 'logo', :alt => 'Pitch&Go'), root_path %></p>
 
       <% if !logged_in? %>
       <p><%= link_to "Login with your Google Account", "/auth/google", :class => "btn btn-primary .btn-large login-button" %></p>

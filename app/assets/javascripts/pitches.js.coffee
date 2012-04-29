@@ -5,15 +5,11 @@
 
 jQuery ->
   $(".vote.btn-success").live 'click', (event) ->
-    console.log("click")
     id = $(this).data("id")
-    console.log(id)
     $.ajax '/pitches/'+id+'/vote',
       type: 'POST'
       dataType: 'json'
       success: (data) =>
-        console.log("success")
-        console.log(data)
         $("#votes_left").text(data.votes_left)
         $(this).removeClass("btn-success")
         $(this).addClass("btn-inverse")

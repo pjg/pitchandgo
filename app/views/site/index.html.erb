@@ -15,12 +15,12 @@
   </thead>
   <tbody>
     <% @pitches.each do |pitch| %>
-      <tr data-id="<%= pitch.id  %>">
-        <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h3></td>
+      <tr>
+        <td><h2><%= link_to pitch.name, pitch_path(pitch) %></h2></td>
         <td><%= pitch.description %></td>
         <td>
           <%- if logged_in? && current_user.has_finished_voting? %>
-            <h3><%= pitch.votes.count %></h3>
+            <h3 class="votes-count" data-id="<%= pitch.id %>"><%= pitch.votes.count %></h3>
           <% end -%>
         </td>
         <td>
