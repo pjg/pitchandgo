@@ -20,7 +20,6 @@ jQuery ->
         $('.btn-success.vote').parent().text("no more votes")
 
   refreshVotes = ->
-    console.log('refresh')
     $.getJSON '/pitches.json', (pitches) ->
       $.each pitches, (index, pitch) ->
         $('h3.votes-count[data-id=' + pitch.id + ']').text(pitch.votes_count)
